@@ -1,1 +1,28 @@
-<p>Submit any blank file here to see a random number generated for your submission. If you get lucky, you might reach the top of the leaderboard.</p>
+<p>Follow these guidelines for submitting your predictions:</p>
+<ol>
+    <li>Create a JSON file containing the following information for each dialogue:</li>
+    <ul>
+        <li><code>dialog_id</code>: Unique identifier for the dialogue</li>
+        <li><code>predicted_emotion</code>: Predicted emotional label</li>
+        <li><code>generated_explanation</code>: Generated explanation in natural language</li>
+    </ul>
+    <li>Ensure your JSON file is in the following format:</li>
+</ol>
+<pre><code>[
+{
+    "dialog_id": "DIALOG_ID_1",
+    "predicted_emotion": "EMOTION_LABEL_1",
+    "generated_explanation": "EXPLANATION_TEXT_1"
+},
+{
+    "dialog_id": "DIALOG_ID_2",
+    "predicted_emotion": "EMOTION_LABEL_2",
+    "generated_explanation": "EXPLANATION_TEXT_2"
+},
+...
+]
+</code></pre>
+<p>Replace <code>DIALOG_ID</code>, <code>EMOTION_LABEL</code>, and <code>EXPLANATION_TEXT</code> with actual values.</p>
+<p>Ensure your JSON file is properly formatted and contains predictions for all dialogues.</p>
+<p>Submit your JSON file via the provided submission platform.</p>
+<p>Good luck, and may the best model win!</p>
