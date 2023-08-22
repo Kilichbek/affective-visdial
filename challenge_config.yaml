@@ -1,39 +1,34 @@
 # If you are not sure what all these fields mean, please refer our documentation here:
 # https://evalai.readthedocs.io/en/latest/configuration.html
-title: Visual-Dialog Based Emotion Explanation Generation Challenge
-short_description: Given a dialogue centered around art, 
-participants are challenged to generate emotion labels and corresponding explanations using natural language using AI.
+title: Random Number Generator Challenge
+short_description: Random number generation challenge for each submission
 description: templates/description.html
 evaluation_details: templates/evaluation_details.html
 terms_and_conditions: templates/terms_and_conditions.html
 image: logo.jpg
 submission_guidelines: templates/submission_guidelines.html
-leaderboard_description: Ranking is based on the F1 score, BLEU score, and BERT score.
+leaderboard_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas a libero nec sagittis.
 evaluation_script: evaluation_script.zip
 remote_evaluation: False
 is_docker_based: False
-start_date: 2023-08-25 00:00:00
-end_date: 2023-09-25 23:59:59
+start_date: 2019-01-01 00:00:00
+end_date: 2099-05-31 23:59:59
 published: True
 
 leaderboard:
   - id: 1
     schema:
       {
-        "labels": ["F1", "BLEU", "BERT", "Total"],
+        "labels": ["Metric1", "Metric2", "Metric3", "Total"],
         "default_order_by": "Total",
         "metadata": {
-          "F1": {
+          "Metric1": {
             "sort_ascending": True,
-            "description": "Weighted F1 score of the emotion predictions.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           },
-          "BLEU": {
+          "Metric2": {
             "sort_ascending": True,
-            "description": "BLUE score of the emotion explanations.",
-          }
-          "BERT": {
-            "sort_ascending": True,
-            "description": "BERT score of the emotion explanations.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           }
         }
       }
