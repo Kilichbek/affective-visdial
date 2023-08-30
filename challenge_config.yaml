@@ -37,7 +37,7 @@ challenge_phases:
   - id: 1
     name: Dev Phase
     description: templates/challenge_phase_1_description.html
-    leaderboard_public: False
+    leaderboard_public: True
     is_public: True
     is_submission_public: True
     start_date: 2019-01-19 00:00:00
@@ -53,26 +53,15 @@ challenge_phases:
       - name: method_description
         is_visible: True
       - name: project_url
-        is_visible: True
+        is_visible: False
       - name: publication_url
-        is_visible: True
+        is_visible: False
     submission_meta_attributes:
       - name: TextAttribute
         description: Sample
         type: text
         required: False
-      - name: SingleOptionAttribute
-        description: Sample
-        type: radio
-        options: ["A", "B", "C"]
-      - name: MultipleChoiceAttribute
-        description: Sample
-        type: checkbox
-        options: ["alpha", "beta", "gamma"]
-      - name: TrueFalseField
-        description: Sample
-        type: boolean
-        required: True
+
     is_restricted_to_select_one_submission: False
     is_partial_submission_evaluation_enabled: False
     allowed_submission_file_types: ".json, .zip, .txt, .tsv, .gz, .csv, .h5, .npy, .npz"
@@ -95,24 +84,15 @@ challenge_phases:
       - name: method_description
         is_visible: True
       - name: project_url
-        is_visible: True
+        is_visible: False
       - name: publication_url
-        is_visible: True
+        is_visible: False
     submission_meta_attributes:
       - name: TextAttribute
         description: Sample
         type: text
-      - name: SingleOptionAttribute
-        description: Sample
-        type: radio
-        options: ["A", "B", "C"]
-      - name: MultipleChoiceAttribute
-        description: Sample
-        type: checkbox
-        options: ["alpha", "beta", "gamma"]
-      - name: TrueFalseField
-        description: Sample
-        type: boolean
+        required: False
+        
     is_restricted_to_select_one_submission: False
     is_partial_submission_evaluation_enabled: False
 
