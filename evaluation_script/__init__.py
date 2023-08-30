@@ -36,6 +36,7 @@ def install_local_package(folder_name):
 install("evaluate==0.4.0")
 install("scikit-learn==1.3.0")
 install("nltk==3.8.1")
+install("bert_score")
 #install_local_package("package_folder_name")
 
 from .main import evaluate

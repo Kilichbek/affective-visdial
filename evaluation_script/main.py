@@ -1,9 +1,10 @@
 import random
 import json
+import nltk
 from evaluate import load
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 from nltk.tokenize import word_tokenize
-
+nltk.download('punkt')
 
 def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwargs):
     print("Starting Evaluation.....")
