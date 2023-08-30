@@ -1,3 +1,4 @@
-{
-	"foo": "bar"
-}
+[
+	{ "dialog_id": 0, "predicted_emotion": "sadness", "generated_explanation": "I feel good today " },
+	{ "dialog_id": 1, "predicted_emotion": "amusement", "generated_explanation": "I feel bad today" }
+]
