@@ -1,10 +1,5 @@
 import random
-import json
-import nltk
-from evaluate import load
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
-from nltk.tokenize import word_tokenize
-nltk.download('punkt')
+
 
 def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwargs):
     print("Starting Evaluation.....")
@@ -44,49 +39,16 @@ def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwarg
             'submitted_at': u'2017-03-20T19:22:03.880652Z'
         }
     """
-
-    # open files
-    with open(test_annotation_file, "r") as f:
-        test_annotation = json.load(f)
-
-    with open(user_submission_file, "r") as f:
-        user_submission = json.load(f)
-
-    dialogs = {d['dialog_id']: { "emotion": d["predicted_emotion"], "explanation": d["generated_explanation"]} for d in test_annotation}
-    ref_emotions = []
-    ref_explanations = []
-    pred_emotions = []
-    pred_explanations = []
-    pred_dialog_ids = []
-    for d in user_submission:
-        dialog_id = d["dialog_id"]
-        pred_dialog_ids.append(dialog_id)
-        ref_emotions.append(dialogs[dialog_id]["emotion"])
-        ref_explanations.append(dialogs[dialog_id]["explanation"])
-        pred_emotions.append(d["predicted_emotion"])
-        pred_explanations.append(d["generated_explanation"])
-
     output = {}
     if phase_codename == "dev":
         print("Evaluating for Dev Phase")
-
-        #precision, recall, f1, _ = precision_recall_fscore_support(ref_emotions, pred_emotions, average='weighted')
-        #f1 = f1 * 100
-        f1 = 1
-        bleu = load("bleu")
-        bleu_results = bleu.compute(predictions=pred_explanations, references=ref_explanations, tokenizer=word_tokenize)
-
-        bertscore = load("bertscore")
-        bertscore_results = bertscore.compute(predictions=pred_explanations, references=ref_explanations, lang="en")
-        bert_score = sum(bertscore_results['recall']) / len(ref_explanations)
-
         output["result"] = [
             {
                 "train_split": {
-                    "Metric1": f1,
-                    "Metric2": bleu_results['bleu'],
-                    "Metric3": bert_score,
-                    "Total": (f1 + bleu_results['bleu'] + bert_score) / 3,
+                    "Metric1": random.randint(0, 99),
+                    "Metric2": random.randint(0, 99),
+                    "Metric3": random.randint(0, 99),
+                    "Total": random.randint(0, 99),
                 }
             }
         ]
@@ -95,26 +57,23 @@ def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwarg
         print("Completed evaluation for Dev Phase")
     elif phase_codename == "test":
         print("Evaluating for Test Phase")
-        #precision, recall, f1, _ = precision_recall_fscore_support(ref_emotions, pred_emotions, average='weighted')
-        #f1 = f1 * 100
-        f1 = 1
-        
-        bleu = load("bleu")
-        bleu_results = bleu.compute(predictions=pred_explanations, references=ref_explanations, tokenizer=word_tokenize)
-
-        bertscore = load("bertscore")
-        bertscore_results = bertscore.compute(predictions=pred_explanations, references=ref_explanations, lang="en")
-        bert_score = sum(bertscore_results['recall']) / len(ref_explanations)
-
         output["result"] = [
             {
-                "test_split": {
-                    "Metric1": f1,
-                    "Metric2": bleu_results['bleu'],
-                    "Metric3": bert_score,
-                    "Total": (f1 + bleu_results['bleu'] + bert_score) / 3,
+                "train_split": {
+                    "Metric1": random.randint(0, 99),
+                    "Metric2": random.randint(0, 99),
+                    "Metric3": random.randint(0, 99),
+                    "Total": random.randint(0, 99),
                 }
-            }
+            },
+            {
+                "test_split": {
+                    "Metric1": random.randint(0, 99),
+                    "Metric2": random.randint(0, 99),
+                    "Metric3": random.randint(0, 99),
+                    "Total": random.randint(0, 99),
+                }
+            },
         ]
         # To display the results in the result file
         output["submission_result"] = output["result"][0]

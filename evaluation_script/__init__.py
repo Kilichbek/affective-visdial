@@ -2,7 +2,7 @@
 # Q. How to install custom python pip packages?
 
 # A. Uncomment the below code to install the custom python packages.
-"""
+
 import os
 import subprocess
 import sys
@@ -33,10 +33,11 @@ def install_local_package(folder_name):
     ]
 )
 
-install("evaluate==0.4.0")
-#install("scikit-learn")
-install("nltk==3.8.1")
-install("bert_score")
-#install_local_package("package_folder_name")
+install("shapely==1.7.1")
+install("requests==2.25.1")
+
+install_local_package("package_folder_name")
+
+"""
 
 from .main import evaluate
