@@ -2,7 +2,7 @@ import random
 import json
 import nltk
 from evaluate import load
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+#from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 from nltk.tokenize import word_tokenize
 nltk.download('punkt')
 

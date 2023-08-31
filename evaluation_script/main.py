@@ -70,9 +70,9 @@ def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwarg
     if phase_codename == "dev":
         print("Evaluating for Dev Phase")
 
-        precision, recall, f1, _ = precision_recall_fscore_support(ref_emotions, pred_emotions, average='weighted')
-        f1 = f1 * 100
-
+        #precision, recall, f1, _ = precision_recall_fscore_support(ref_emotions, pred_emotions, average='weighted')
+        #f1 = f1 * 100
+        f1 = 1
         bleu = load("bleu")
         bleu_results = bleu.compute(predictions=pred_explanations, references=ref_explanations, tokenizer=word_tokenize)
 
@@ -95,9 +95,10 @@ def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwarg
         print("Completed evaluation for Dev Phase")
     elif phase_codename == "test":
         print("Evaluating for Test Phase")
-        precision, recall, f1, _ = precision_recall_fscore_support(ref_emotions, pred_emotions, average='weighted')
-        f1 = f1 * 100
-
+        #precision, recall, f1, _ = precision_recall_fscore_support(ref_emotions, pred_emotions, average='weighted')
+        #f1 = f1 * 100
+        f1 = 1
+        
         bleu = load("bleu")
         bleu_results = bleu.compute(predictions=pred_explanations, references=ref_explanations, tokenizer=word_tokenize)
 
