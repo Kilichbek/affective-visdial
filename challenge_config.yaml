@@ -45,8 +45,8 @@ challenge_phases:
     test_annotation_file: annotations/test_annotations_devsplit.json
     codename: dev
     max_submissions_per_day: 1000
-    max_submissions_per_month: 50
-    max_submissions: 50
+    max_submissions_per_month: 1000
+    max_submissions: 1000
     default_submission_meta_attributes:
       - name: method_name
         is_visible: True
@@ -76,8 +76,8 @@ challenge_phases:
     test_annotation_file: annotations/test_annotations_testsplit.json
     codename: test
     max_submissions_per_day: 1000
-    max_submissions_per_month: 50
-    max_submissions: 50
+    max_submissions_per_month: 1000
+    max_submissions: 1000
     default_submission_meta_attributes:
       - name: method_name
         is_visible: True
